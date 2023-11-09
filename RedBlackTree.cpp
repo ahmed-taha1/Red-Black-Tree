@@ -164,7 +164,7 @@ void RedBlackTree::leftRotate(Node* x){
         root = b;
 }
 
-int RedBlackTree::getMax(){
+int RedBlackTree::getMax() const{
     if(root == nullptr)
         return -1;
 
@@ -176,7 +176,7 @@ int RedBlackTree::getMax(){
     return node->val;
 }
 
-int RedBlackTree::getMin(){
+int RedBlackTree::getMin() const{
     if(root == nullptr)
         return -1;
 
@@ -186,4 +186,28 @@ int RedBlackTree::getMin(){
     }
 
     return node->val;
+}
+
+Node* RedBlackTree::getPredecessor(Node* node) const{
+    Node* curr = node->left;
+    if(curr == nullptr)
+        return curr;
+    
+    while (curr->right != nullptr){
+        curr = curr->right;
+    }
+
+    return curr;
+}
+
+Node* RedBlackTree::getSuccessor(Node* node) const{
+    Node* curr = node->right;
+    if(curr == nullptr)
+        return curr;
+    
+    while (curr->left != nullptr){
+        curr = curr->left;
+    }
+    
+    return curr;
 }

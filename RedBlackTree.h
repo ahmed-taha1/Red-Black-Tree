@@ -9,6 +9,8 @@ class RedBlackTree{
         Node* getNode(const int& val) const;
         void leftRotate(Node* x);
         void rightRotate(Node* x);
+        Node* getSuccessor(Node* x) const;
+        Node* getPredecessor(Node* x) const;
 public:
     RedBlackTree();
     int size() const;
@@ -16,8 +18,8 @@ public:
     Node* BSTinsert(const int& val);
     bool isExist(const int& val) const;
     char getNodeColor(const int& val) const;
-    int getMin();
-    int getMax();
+    int getMin() const;
+    int getMax() const;
     // void deleteNode(const int& val);
     // ~RedBlackTree();
 };
